@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap&family=Crimson+Text:ital,wght@1,400;1,600&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:wght@300;400&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --background: #eff0f3;
+  --navbar: #2a2a2a;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  background-color: var(--navbar);
+  padding: 0px 30px;
+}
+
+.logo {
+  height: 100px;
+}
+
+.navbar,
+.navbar-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar {
+  gap: 100px;
+}
+
+.navbar-list {
+  gap: 15px;
+}
+
+li > a {
+  color: whitesmoke;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.fa-cart-shopping {
+  color: whitesmoke;
+  font-size: 1.7em;
+}
+
+body {
+  background-color: var(--background);
+}
