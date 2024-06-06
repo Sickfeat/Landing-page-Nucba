@@ -10,7 +10,8 @@
 
 :root {
   --background: #eff0f3;
-  --navbar: #2a2a2a;
+  --navbar: #1a243a;
+  --fontColor: whitesmoke;
 }
 
 header {
@@ -33,7 +34,7 @@ header {
   justify-content: space-between;
 }
 .navbar {
-  gap: 100px;
+  gap: 40px;
 }
 
 .navbar-list {
@@ -41,16 +42,156 @@ header {
 }
 
 li > a {
-  color: whitesmoke;
+  color: var(--fontColor);
   font-weight: 500;
   font-size: 20px;
 }
 
-.fa-cart-shopping {
-  color: whitesmoke;
+.fa-cart-shopping,
+.fa-bars {
+  color: var(--fontColor);
   font-size: 1.7em;
 }
 
+.fa-bars {
+  display: none !important;
+}
 body {
   background-color: var(--background);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* !!!!!!!!!!!!!!!!! SECTION HERO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!! SECTION HERO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.section-hero {
+  display: flex;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 40px;
+}
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+}
+
+.hero-container h1 {
+  font-size: 2.5rem;
+}
+
+.hero-container p {
+  font-size: 1.5rem;
+  color: rgb(58, 58, 58);
+  font-weight: 500;
+}
+
+.hero-container a {
+  background-color: rgb(42, 42, 214);
+  border-radius: 25px;
+  padding: 12px 22px;
+  font-size: 1.5rem;
+  color: var(--fontColor);
+}
+.hero-image {
+  width: 40%;
+}
+/* !!!!!!!!!!!!!!!!! SECTION ABOUT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!! SECTION ABOUT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.section-about {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 50px;
+  min-height: 600px;
+}
+
+.about-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 15px;
+  min-height: 250px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 39px -3px rgba(0, 0, 0, 0.54);
+}
+.fa-about {
+  color: var(--fontColor);
+  font-size: 32px;
+  font-weight: 200;
+  padding: 20px;
+  background-color: #2a545da2;
+  border-radius: 50%;
+}
+
+.fa-arrow-pointer {
+  padding: 20px 30px;
+}
+/* !!!!!!!!!!!!!!!!!!!!!!!!!MEDIA QUERIES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+@media (max-width: 992px) {
+  .section-hero {
+    flex-direction: column;
+  }
+  .hero-image {
+    max-width: 60%;
+  }
+  .about-container {
+    flex-wrap: wrap;
+  }
+  .about-card {
+    max-width: 70%;
+  }
+}
+@media (max-width: 768px) {
+  .hero-container h1 {
+    font-size: 2rem;
+  }
+
+  .hero-container p {
+    font-size: 1rem;
+  }
+  .hero-container a {
+    font-size: 1rem;
+  }
+  .navbar {
+    gap: 60px;
+  }
+  .section-about h2 {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .navbar-list {
+    display: none;
+  }
+  .fa-bars {
+    display: inline !important;
+  }
 }
