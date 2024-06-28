@@ -21,12 +21,18 @@ header {
   height: 70px;
   background-color: var(--navbar);
   padding: 0px 30px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 }
 
 .logo {
   height: 100px;
 }
 
+.title-name {
+  color: var(--fontColor);
+}
 .navbar,
 .navbar-list {
   display: flex;
@@ -40,13 +46,34 @@ header {
 .navbar-list {
   gap: 15px;
 }
+.navbar-link {
+  position: relative;
+}
+.navbar-link::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: var(--fontColor);
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  opacity: 0;
+  transition: all 0.2s;
+  pointer-events: none;
+}
 
-li > a {
+.navbar-link:hover::after {
+  opacity: 1;
+}
+li a {
   color: var(--fontColor);
   font-weight: 500;
   font-size: 20px;
 }
 
+#menu-hambur {
+  display: none;
+}
 .fa-cart-shopping,
 .fa-bars {
   color: var(--fontColor);
@@ -56,6 +83,7 @@ li > a {
 .fa-bars {
   display: none !important;
 }
+
 body {
   background-color: var(--background);
 }
@@ -66,6 +94,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 40px;
+  padding-top: 60px;
 }
 
 /* !!!!!!!!!!!!!!!!! SECTION HERO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
@@ -154,6 +183,293 @@ body {
 .fa-arrow-pointer {
   padding: 20px 30px;
 }
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!SECTION DISCOVER!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.section-discover {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.discover-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+  gap: 30px;
+  padding: 15px;
+}
+
+.discover-info p {
+  width: 70%;
+}
+
+.discover-info a {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.discover-fotos {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.discover-fotos > * {
+  width: 30%;
+  min-width: 350px;
+  height: 350px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 39px -3px rgba(0, 0, 0, 0.54);
+  background-size: contain;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.discover-vino {
+  background-image: url(/assets/Cards-bebidas/vinos-accesibles-para-todos-los-Z2C3MLLOIRD25D2AHNIRE4JN2U.png);
+}
+
+.discover-vino::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  border-radius: 25px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.discover-vino:hover::before {
+  opacity: 1;
+}
+
+.discover-vino::after {
+  content: "Vinos";
+  color: white;
+  text-shadow: -1px 3px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000;
+  font-size: 3rem;
+  font-weight: 600;
+  z-index: 9;
+  transition: opacity 1s ease;
+  opacity: 0;
+}
+.discover-vino:hover::after {
+  opacity: 1;
+}
+
+.discover-whisky {
+  background-image: url(/assets/Cards-bebidas/Banner-Whisky-desk.jpg);
+}
+
+.discover-whisky::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  border-radius: 25px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.discover-whisky:hover::before {
+  opacity: 1;
+}
+
+.discover-whisky::after {
+  content: "Whisky";
+  color: white;
+  text-shadow: -1px 3px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000;
+  font-size: 3rem;
+  font-weight: 600;
+  z-index: 9;
+  transition: opacity 1s ease;
+  opacity: 0;
+}
+.discover-whisky:hover::after {
+  opacity: 1;
+}
+
+.discover-aperitivo {
+  background-image: url(/assets/Cards-bebidas/digestivos-vinos.jpg);
+}
+
+.discover-aperitivo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  border-radius: 25px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.discover-aperitivo:hover::before {
+  opacity: 1;
+}
+
+.discover-aperitivo::after {
+  content: "Aperitivos";
+  color: white;
+  text-shadow: -1px 3px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000;
+  font-size: 3rem;
+  font-weight: 600;
+  z-index: 9;
+  transition: opacity 1s ease;
+  opacity: 0;
+}
+.discover-aperitivo:hover::after {
+  opacity: 1;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!   CONTACTO   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  height: 800px;
+}
+.contact__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px;
+  flex-wrap: wrap;
+}
+
+.container__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.contact__title--h2 {
+  font-size: 2rem;
+}
+.contact__data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.contact__data--box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+}
+
+.contact__data--subtitle {
+  font-size: 1.5rem;
+}
+.contact__data--text {
+  color: gray;
+  font-size: 1.1rem;
+}
+.contact__social {
+  display: flex;
+  gap: 30px;
+}
+.fa-social {
+  color: rgb(38, 37, 77);
+  font-size: 2rem;
+}
+
+iframe {
+  border: 4px solid var(--navbar);
+  border-radius: 10px;
+}
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!     FOOTER     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+footer {
+  display: flex;
+  height: 250px;
+  width: 100%;
+  gap: 25px;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--navbar);
+}
+.footer-QA {
+  display: flex;
+  gap: 40px;
+}
+.footer-QA a {
+  color: var(--fontColor);
+  font-size: 1.25rem;
+  font-weight: 400;
+  position: relative;
+}
+
+.footer-QA a::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: var(--fontColor);
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  opacity: 0;
+  transition: all 0.2s;
+  pointer-events: none;
+}
+.footer-QA a:hover::after {
+  opacity: 1;
+}
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.footer-social i {
+  font-size: 2.5rem;
+  color: white;
+  border-radius: 100%;
+}
+
+.footer-social i:hover {
+  box-shadow: rgba(255, 255, 255, 0.3) 0px 19px 38px,
+    rgba(255, 255, 255, 0.22) 0px 15px 12px;
+}
+.footer-legal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-legal p {
+  font-size: 1rem;
+  color: var(--fontColor);
+  text-align: center;
+}
+
 /* !!!!!!!!!!!!!!!!!!!!!!!!!MEDIA QUERIES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 @media (max-width: 992px) {
@@ -168,6 +484,10 @@ body {
   }
   .about-card {
     max-width: 70%;
+  }
+  iframe {
+    width: 450px;
+    height: 300px;
   }
 }
 @media (max-width: 768px) {
@@ -190,9 +510,42 @@ body {
     text-align: center;
   }
   .navbar-list {
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: #2e4372;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 30px 0px;
+    flex-direction: column;
     display: none;
+  }
+
+  #menu-hambur:checked ~ .navbar-list {
+    display: flex;
   }
   .fa-bars {
     display: inline !important;
+  }
+
+  .contact__container {
+    gap: 70px;
+  }
+  footer {
+    height: 450px;
+    justify-content: center;
+  }
+  .footer-QA {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-social {
+    gap: 60px;
+  }
+}
+@media (max-width: 576px) {
+  iframe {
+    width: 350px;
+    height: 200px;
   }
 }
