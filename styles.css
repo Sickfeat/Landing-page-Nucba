@@ -13,7 +13,9 @@
   --navbar: #1a243a;
   --fontColor: whitesmoke;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 header {
   display: flex;
   align-items: center;
@@ -188,6 +190,20 @@ body {
 /* !!!!!!!!!!!!!!!SECTION DISCOVER!!!!!!!!!!!!!!!!! */
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
+.section-background {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: rgb(40, 88, 136);
+  background: radial-gradient(
+    circle,
+    rgba(40, 88, 136, 1) 0%,
+    rgba(26, 36, 58, 1) 55%
+  );
+  padding: 80px;
+}
+
 .section-discover {
   display: flex;
   flex-direction: column;
@@ -206,14 +222,21 @@ body {
   gap: 30px;
   padding: 15px;
 }
-
+.discover-info h2 {
+  color: var(--fontColor);
+}
 .discover-info p {
   width: 70%;
+  color: var(--fontColor);
 }
 
 .discover-info a {
   font-size: 1.5rem;
   font-weight: 500;
+  padding: 15px 10px;
+  color: var(--fontColor);
+  background-color: #72c8dd;
+  border-radius: 15px;
 }
 
 .discover-fotos {
@@ -356,8 +379,6 @@ body {
 }
 .contact__container {
   display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 30px;
   padding: 15px;
   flex-wrap: wrap;
@@ -488,6 +509,10 @@ footer {
   iframe {
     width: 450px;
     height: 300px;
+  }
+
+  .contact__container {
+    justify-content: center;
   }
 }
 @media (max-width: 768px) {
